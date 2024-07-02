@@ -1,4 +1,4 @@
-%% For x^(-s) in [lambda_min,lambda_max]
+% For x^(-s) in [lambda_min,lambda_max]
 
 s = 0.5;
 lambda_min = 1e-6; lambda_max = 1;
