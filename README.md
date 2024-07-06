@@ -5,7 +5,7 @@ REIM_power1_demo.m is on the REIM rational approximation of x^(-s) on [1e-6,1];
 
 REIM_power2_demo.m is on the REIM rational approximation of x^(-s) on [1e-8,1];
 
-REIM_exp_demo.m on the REIM rational approximation of x^(-s) on [1e-8,1];
+REIM_exp_demo.m on the REIM rational approximation of (exp(x) - 1)/x and exp(x); on [1,1e6];
 
 REIM_exp_demo.m on the REIM rational approximation of x^(-s) on [1e-8,1];
 
