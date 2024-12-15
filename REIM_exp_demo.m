@@ -1,7 +1,7 @@
 % For exp(-tau x) and varphi(-tau x) in [lambda_min,lambda_max]
 
 % phi = @(z) (exp(z) - 1)./z;
-phi = @(z) exp(z);
+phi = @(z) (exp(z) - 1)./z;
 
 lambda_min = 1; lambda_max = 1e6;
 tau = linspace(1e-3,1,1e2);
@@ -11,15 +11,23 @@ M = 30;
 
 Xtest = linspace(lambda_min,lambda_max,5e5)';
 gtest = 1./(Xtest+Bm');
-err = zeros(length(tau),1); 
+errphi = zeros(length(tau),1); 
+errexp = errphi;
 for i = 1:length(tau)
     phiz = phi(-tau(i)*Xtest);
     phizi = phi(-tau(i)*Xm);
-    err(i) = norm(phiz - gtest*(Gm\phizi), 'inf');
+    exz = exp(-tau(i)*Xtest);
+    exzi = exp(-tau(i)*Xm);
+    errphi(i) = norm(phiz - gtest*(Gm\phizi), 'inf');
+    errexp(i) = norm(exz - gtest*(Gm\exzi), 'inf');
 end
-semilogy(tau,err,'o')
+semilogy(tau,errexp,'o','MarkerSize',5,'Color',[0.00 0.45 0.74],'LineWidth',1)
 fprintf('The error is %e\n',max(err));
-
+hold on
+semilogy(tau,errphi,'r*','MarkerSize',5,'LineWidth',1)
+xlabel('$\tau_i$','interpreter','latex','fontsize',16)
+ylabel('$L^{\infty}$ error','interpreter','latex','fontsize',16)
+legend('$\exp(-\tau_i x)$','$\varphi(-\tau_i x)$','interpreter','latex','fontsize',12)
 function [xm,bm,G] = REIM(M,a,b)
     c = b/1e4; d = b/1e2;
     xset = unique([a:(c-a)/2000:c,c:(d-c)/2000:d,d:(b-d)/3000:b]');

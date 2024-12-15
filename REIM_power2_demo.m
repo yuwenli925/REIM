@@ -1,17 +1,26 @@
-% For x^(-s) in [lambda_min,lambda_max]
+% For x^(-s) in [lambda_min,lambda_max] = [1e-8,1]
 
-s = 0.5;
+s = [0.25,0.5,0.75,0.95];
 lambda_min = 1e-8; lambda_max = 1;
 
-M = 31;
+M = 40;
 [Xm,Bm,Gm] = REIM(M,lambda_min,lambda_max);
 
 Xtest = linspace(lambda_min,lambda_max,5e5)';
-gtest = 1./(Xtest+Bm');
-
-err = norm(Xtest.^(-s) - gtest*(Gm\Xm.^(-s)), 'inf');
-
-fprintf('The error is %e\n',max(err));
+err = zeros(M,1);
+Line = ["-o","-*","-square","-+"];
+for j = 1:4
+    for i = 1:M
+        gtest = 1./(Xtest+Bm(1:i)');
+        err(i) = norm(Xtest.^(-s(j)) - gtest*(Gm(1:i,1:i)\Xm(1:i).^(-s(j))), 'inf');
+    end
+    fprintf('The error for s = %.2f is %e\n',s(j),err(end));
+    semilogy(1:M,err,Line(j),'LineWidth',1)
+    xlabel('$n$','interpreter','latex','fontsize',16)
+    ylabel('$L^{\infty}$ error','interpreter','latex','fontsize',16)
+    hold on
+end
+legend('s=0.25','s=0.5','s=0.75','s=0.95','interpreter','latex','fontsize',12)
 
 function [xm,bm,G] = REIM(M,a,b)
     c = 1e-5; d = 1e-2;
