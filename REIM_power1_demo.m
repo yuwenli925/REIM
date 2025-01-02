@@ -31,14 +31,14 @@ for j = 1:length(s)
     errAAA2 = []';
     for i = 1:M
         [~,pole,~,~,~,~,~,errAAA] = aaa(f,X,mmax=i);
-        if i >=2 && errAAA(end) > 10*errAAA(end-1)
+        if (i >=2 && errAAA(end) > 10*errAAA(end-1))||length(errAAA) < i %quit AAA
             iter = i-1;
             break
         end
         gx = 1./(repmat(X,1,length(pole))-pole');
         gtest = 1./(repmat(Xtest,1,length(pole))-pole');
         errAAA2(i) = max(abs(ftest-gtest*(gx\fx)));
-        iter = i;
+        iter = min(i,errAAA);
     end
     semilogy(1:iter,errAAA(1:iter),'-square','LineWidth',1)
     hold on
