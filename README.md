@@ -13,6 +13,8 @@ REIM_power1_demo.m is on the REIM rational approximation of x^(-s) on [1e-6,1], 
 
 REIM_power2_demo.m is on the REIM rational approximation of x^(-s) on [1e-8,1], which generates left of Fig.4.
 
+FEM2D_fractional_demo.m solves the fractional Laplace equation on uniform and graded meshes. It outputs Fig. 4 (right).
+
 REIM_time_demo.m is on the REIM rational approximation of 1/(x^s+d) on [1e-6,1], which generates Fig.5.
 
 BDF2_FEM.m is on the L^2 errors of numerical solutions and the accepted/rejected step sizes, which generates Fig.6.
