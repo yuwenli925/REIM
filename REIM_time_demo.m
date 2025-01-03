@@ -1,4 +1,4 @@
-% For 1/(x^s+d) in [1e-6,1]
+%% rEIM for 1/(x^s+d) in [1e-6,1]
 
 s = [0.5, 1];
 
