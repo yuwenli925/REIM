@@ -1,4 +1,5 @@
-%For (x^(-0.5)+Kx^0.5)^-1 in [1e-6,1]
+%% rEIM for (x^(-0.5)+Kx^0.5)^-1 in [1e-6,1]
+
 K = sort(rand(100,1)*(1-1e-6)+1e-6);
 M = 30; s = 0.5;
 [Xm,Bm,Gm] = REIM(M,1e-6,1,"precon");
