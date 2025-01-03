@@ -11,7 +11,7 @@ REIM.m is the function used for all other scripts. When the approximation interv
 
 REIM_power1_demo.m is on the REIM rational approximation of x^(-s) on [1e-6,1], in which the OGA and the AAA are also used. It generates Fig.2 in the paper.
 
-REIM_power2_demo.m is on the REIM rational approximation of x^(-s) on [1e-8,1], which generates left of Fig.4.
+REIM_power2_demo.m is on the REIM rational approximation of x^(-s) on [1e-8,1], which generates Fig.4 (left).
 
 FEM2D_fractional_demo.m solves the fractional Laplace equation on uniform and graded meshes. It outputs Fig. 4 (right). Setting dynamic = 1 in this function produce the graded mesh in Fig. 3 (right).
 
@@ -19,8 +19,8 @@ REIM_time_demo.m is on the REIM rational approximation of 1/(x^s+d) on [1e-6,1],
 
 BDF2_FEM.m is on the L^2 errors of numerical solutions and the accepted/rejected step sizes, which generates Fig.6.
 
-REIM_exp_demo.m is on the REIM rational approximation of (exp(-tau x) - 1)/(-tau x) and exp(-tau x) on [1,1e6], which generates the right of Fig.7.
+REIM_exp_demo.m is on the REIM rational approximation of (exp(-tau x) - 1)/(-tau x) and exp(-tau x) on [1,1e6], which generates Fig.7 (right).
 
-REIM_precon_demo.m is on the REIM rational approximation (x^(-0.5)+Kx^0.5)^-1 on [1e-6,1], which generates the left of Fig.7.
+REIM_precon_demo.m is on the REIM rational approximation (x^(-0.5)+Kx^0.5)^-1 on [1e-6,1], which generates Fig.7 (left).
 
 
