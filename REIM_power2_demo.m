@@ -17,7 +17,7 @@ for j = 1:4
     fprintf('The error for s = %.2f is %e\n',s(j),err(end));
     semilogy(1:M,err,Line(j),'LineWidth',1)
     xlabel('$n$','interpreter','latex','fontsize',16)
-    ylabel('$L^{\infty}$ error','interpreter','latex','fontsize',16)
+    ylabel('rEIM error','interpreter','latex','fontsize',16)
     hold on
 end
 legend('s=0.25','s=0.5','s=0.75','s=0.95','interpreter','latex','fontsize',12)
