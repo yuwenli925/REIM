@@ -22,7 +22,7 @@ fv = setdiff(1:NV,bv)';
 S = Stiff(fv,fv);
 M = Mass(fv,fv);
 
-LL = cell(np,1); UU = LL; PP = LL; QQ = LL;%Abi
+LL = cell(np,1); UU = LL; PP = LL; QQ = LL;
 e=ones(np,1);
 for i=1:np
     [LL{i}, UU{i}, PP{i}, QQ{i}] = lu(S/Lambda + Bm(i)*M);
@@ -93,7 +93,7 @@ while T(end) <= tend
     if tau0 <= 1e-4
            break
     end
-    T(end)
+    %T(end)
 end
   
 figure(1)
