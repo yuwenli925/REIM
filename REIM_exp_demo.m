@@ -1,4 +1,4 @@
-% For exp(-tau x) and varphi(-tau x) in [lambda_min,lambda_max]
+%% rEIM for exp(-tau x) and varphi(-tau x) in [lambda_min,lambda_max]
 
 % phi = @(z) (exp(z) - 1)./z;
 phi = @(z) (exp(z) - 1)./z;
