@@ -1,8 +1,8 @@
-%EIM bdf2修改
+%FEM
+addpath '.\FEM'
+[Xm,Bm,~] = REIM(30,1e-6,1,'time');
 
-[Xm,Bm,~] = REIM(30,lambda_min,lambda_max,'time');
-
-s = 1; %%change s = 0.5 or 1 to generate Fig.6
+s = 0.5; %%change s = 0.5 or 1 to generate Fig.6
 Lambda = 1e6; 
 gx = 1./(repmat(Xm,1,length(Bm))+Bm');
 tend = 1; tol = 1e-4;
