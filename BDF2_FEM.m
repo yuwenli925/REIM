@@ -1,4 +1,5 @@
-%FEM
+%% Solve space-fractional parabolic PDE by rational approximation and adaptive time step size
+
 addpath './FEM'
 [Xm,Bm,~] = REIM(30,1e-6,1,'time');
 
