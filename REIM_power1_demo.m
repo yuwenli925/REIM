@@ -1,4 +1,4 @@
-% REIM, AAA, OGA for x^(-s) in [lambda_min,lambda_max] = [1e-6,1]. It costs around 15 min.
+% REIM, AAA, OGA for x^(-s) in [1e-6,1]. It costs around 8 min.
 
 s = [0.25,0.5,0.75,0.95];
 lambda_min = 1e-6; lambda_max = 1;
