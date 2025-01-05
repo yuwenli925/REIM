@@ -1,7 +1,7 @@
 # REIM
 This repo is on the MATLAB codes implemented in numerical experiments of the paper "Rational empirical interpolation methods with applications" by Aidi Li and Yuwen Li posted as arXiv:2406.19339
 
-In the folder 'FEM', the functions squaremesh.m, uniformrefine.m, gradbasis.m are borrowed from the iFEM package developed by Prof. Long Chen at UC Irvine.
+Functions in the folder 'FEM' are borrowed from the iFEM package developed by Prof. Long Chen at UC Irvine.
 
 aaa.m is borrowed from the chebfun package. The AAA algorithm was developed by Yuji Nakatsukasa, Olivier Sète, Lloyd N. Trefethen, see the paper "The AAA algorithm for rational approximation".
 
